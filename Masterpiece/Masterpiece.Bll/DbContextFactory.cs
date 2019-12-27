@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Masterpiece.Repository.DBContext;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Mapping;
 using System.Data.Entity.Core.Metadata.Edm;
@@ -25,8 +26,8 @@ namespace Masterpiece.Bll
             }
         }
 
-        private DbContextFactoryPart1 dbContextPart1;
-        public DbContextFactoryPart1 DBContextPart1
+        private MasterpieceDBContextPart1 dbContextPart1;
+        public MasterpieceDBContextPart1 DBContextPart1
         {
             set
             {
@@ -36,7 +37,7 @@ namespace Masterpiece.Bll
             {
                 if (dbContextPart1 == null)
                 {
-                    dbContextPart1 = new AbhsCrmTocDBContextPart1();
+                    dbContextPart1 = new DbContextFactoryPart1();
                 }
                 return dbContextPart1;
             }
